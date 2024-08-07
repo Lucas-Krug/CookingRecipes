@@ -1,7 +1,5 @@
 on:
   pull_request:
-    types:
-      - opened
     branches:
       - 'main'
 
@@ -22,5 +20,5 @@ jobs:
 
       - name: Load Google Service file
         env:
-          DATA: ${{ secrets.GOOGLE_SERVICES_JSON }}
+          DATA: ${{ secrets.GOOGLE_SERVICE_JSON }}
         run: echo $DATA | base64 -di > app/google-services.json
